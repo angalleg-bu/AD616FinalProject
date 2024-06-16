@@ -133,7 +133,7 @@ ggplot(demand_comparison_long, aes(x = Stop_Name, y = Total_Passengers, fill = T
 Load Factors
 - represents the ratio of passengers actually carried to the maximum capacity of the bus
 ```{r}
-bus_capacity <- 40
+bus_capacity <- 51
 # Calculate the load factor for each route
 load_factor_non_peak <- df_nonpeak_long %>%
   mutate(Load_Factor = Passengers / bus_capacity)
@@ -161,8 +161,8 @@ ggplot(load_factor_combined, aes(x = Destination, y = Load_Factor, fill = Time_P
 
 Number of Buses Needed
 ```{r}
-# Estimate the number of buses required (assuming a bus capacity of 40 passengers)
-bus_capacity <- 40
+# Estimate the number of buses required (assuming a bus capacity of 51 passengers)
+bus_capacity <- 51
 demand_comparison <- demand_comparison %>%
   mutate(
     Buses_Needed_Non_Peak = ceiling(Non_Peak_Passengers / bus_capacity),
